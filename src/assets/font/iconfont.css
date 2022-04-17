@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "iconfont"; /* Project id  */
+  src: url('iconfont.ttf?t=1650191576600') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-weibo:before {
+  content: "\e508";
+  color: #e05244;
+
+}
+
+.icon-wechat:before {
+  content: "\e6ca";
+  color: #00bb29;
+}
+
+.icon-qq:before {
+  content: "\e6cb";
+  color: #498ad5;
+}
+

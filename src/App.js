@@ -1,23 +1,36 @@
-import logo from './logo.svg';
+import {useState} from 'react';
 import './App.css';
+import SignInForm from "./components/SignInForm";
+import SignUpForm from "./components/SignUpForm";
 
 function App() {
+  const [currentTab, setCurrentTab] = useState('sign_up');
+  const onTabChange = (tab) => {
+    setCurrentTab(tab);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="login-wrapper">
+      <h4 className="login-wrapper-title">
+        <span
+          onClick={() => {onTabChange('sign_in')}}
+          className={currentTab === 'sign_in' ? 'active' : ''}
         >
-          Learn React
-        </a>
-      </header>
+          登录
+        </span>
+        <b>·</b>
+        <span
+          onClick={() => {onTabChange('sign_up')}}
+          className={currentTab === 'sign_up' ? 'active' : ''}
+        >
+          注册
+        </span>
+      </h4>
+      <div className="login-wrapper-content">
+        {
+          currentTab === 'sign_up' ? <SignUpForm /> : <SignInForm />
+        }
+      </div>
     </div>
   );
 }
